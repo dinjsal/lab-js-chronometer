@@ -8,7 +8,7 @@ class Chronometer {
     this.printTimeCallback = printTimeCallback;
     this.intervalId = setInterval(() => { 
       this.currentTime += 1;
-      // printTimeCallback();
+      // printTimeCallback(); still red, idk where to put it
     }, 1000);
   }
 
@@ -24,8 +24,9 @@ class Chronometer {
 
   computeTwoDigitNumber(value) {
     this.value = value;
-    if (this.value.length === 2) {
-      return this.value.toString();
+    const stringAlready = this.value.toString();
+    if (stringAlready.length === 2) {
+      return stringAlready;
     }
     else {
       const stringNow = this.value.toString();
