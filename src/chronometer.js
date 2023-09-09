@@ -5,8 +5,10 @@ class Chronometer {
   }
 
   start(printTimeCallback) {
-    this.intervalId = setInterval((printTimeCallback) => { //why she dark?
+    this.printTimeCallback = printTimeCallback;
+    this.intervalId = setInterval(() => { 
       this.currentTime += 1;
+      // printTimeCallback();
     }, 1000);
   }
 
@@ -22,13 +24,12 @@ class Chronometer {
 
   computeTwoDigitNumber(value) {
     this.value = value;
-    if (this.value.length < 2) {
-      this.value.toString();
-
+    if (this.value.length === 2) {
+      return this.value.toString();
     }
-    else if (this.value.length === 2) {
-      this.value.toString()
-      return this.value.slice(0);
+    else {
+      const stringNow = this.value.toString();
+      return 0 + stringNow;
     }
   }
 
