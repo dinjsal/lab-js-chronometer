@@ -21,15 +21,23 @@ class Chronometer {
   }
 
   computeTwoDigitNumber(value) {
-    // ... your code goes here
+    this.value = value;
+    if (this.value.length < 2) {
+      this.value.toString();
+
+    }
+    else if (this.value.length === 2) {
+      this.value.toString()
+      return this.value.slice(0);
+    }
   }
 
   stop() {
-    // ... your code goes here
+    clearInterval(this.intervalId);
   }
 
   reset() {
-    // ... your code goes here
+    this.currentTime = 0;
   }
 
   split() {
